@@ -1,12 +1,14 @@
 package com.jtavarez.model;
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,6 +23,18 @@ public class Teacher implements Serializable {
   private int teacherId;
   private String salary;
   private String teacherName;
+
+  @OneToOne(cascade = CascadeType.ALL)
+  private Address address;
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
+  }
+
 
   public Teacher( String salary, String teacherName) {
     super();

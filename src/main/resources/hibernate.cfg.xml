@@ -22,6 +22,7 @@
     <!--   Mapping entity file -->
     <mapping class="com.jtavarez.model.Teacher"/>
     <mapping class="com.jtavarez.model.Department"/>
+    <mapping class="com.jtavarez.model.Address"/>
 
   </session-factory>
 </hibernate-configuration>
